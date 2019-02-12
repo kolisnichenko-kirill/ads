@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Ad;
 use DB;
 use Auth;
+use App\Http\Requests\AdPost;
 
 class AdController extends Controller
 {
@@ -27,12 +28,14 @@ class AdController extends Controller
         return view('create');
     }
     
-    public function create(Request $request)
+    public function create(AdPost $request)
     {
         $ad = new Ad;
 
-        $ad->title = $request->title;
-        $ad->description = $request->description;
+        $validated = $request->validated();
+
+        $ad->title = $validated['title'];
+        $ad->description = $validated['description'];
         $ad->author_name = Auth::user()->username;
 
         $ad->save();
@@ -51,7 +54,7 @@ class AdController extends Controller
         return view('edit', ['ad' => $ad]);
     }
     
-    public function edit($id, Request $request)
+    public function edit($id, AdPost $request)
     {
         $ad = Ad::findOrFail($id);
 
@@ -59,8 +62,10 @@ class AdController extends Controller
             return abort(403);
         }
 
-        $ad->title = $request->title;
-        $ad->description = $request->description;
+        $validated = $request->validated();
+
+        $ad->title = $validated['title'];
+        $ad->description = $validated['description'];
 
         $ad->save();
 
