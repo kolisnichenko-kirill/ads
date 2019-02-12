@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form method="POST" action="{{ route('create', ['id' => $ad->id]) }}">
+    <form method="POST" action="{{ route('create') }}">
         
         @include('form')
 
