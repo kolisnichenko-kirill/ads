@@ -1,0 +1,36 @@
+body {
+    background-color: #c2d2ff;
+    margin: 2%;
+}
+
+.right-menu {
+    background-color: #e0e8ff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.greeting {
+    font-size: 1.4em;
+}
+
+.ad {
+    background-color: #b0c5ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.ad .title {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.ad .info {
+    text-align: right;
+    color: #40404b;
+}
+
+.paginator {
+    text-align: center;
+}
