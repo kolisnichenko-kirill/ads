@@ -17,8 +17,8 @@
             <br>
             
             @if (Auth::check() && Auth::user()->username == $item->author_name)
-                <a href="{{ route('edit', ['id' => $ad->id]) }}">Edit</a>
-                <a href="{{ route('delete', ['id' => $ad->id]) }}">Delete</a>
+                <a href="{{ route('edit', ['id' => $item->id]) }}">Edit</a>
+                <a href="{{ route('delete', ['id' => $item->id]) }}">Delete</a>
             @endif
         </div>
     </div>
