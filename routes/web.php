@@ -23,3 +23,6 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::get('/{id}', ['uses' => 'AdController@show', 'as' => 'show']);
+
+Route::post('/login', ['uses' => 'LoginController@login', 'as' => 'login']);
+Route::post('/logout', ['uses' => 'LoginController@logout', 'as' => 'logout']);
